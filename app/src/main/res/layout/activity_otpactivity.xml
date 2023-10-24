@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
+    tools:context=".OTPActivity">
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/otpverification"
+        android:id="@+id/phonenumber"
         android:textSize="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="OTP verification"
+        android:text="+8801872562829"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -32,59 +32,60 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Send one time OTP"
+        android:text="Enter your OTP code to verify your account "
         android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/otpverification"
+        app:layout_constraintEnd_toEndOf="@+id/phonenumber"
         app:layout_constraintHorizontal_bias="0.555"
-        app:layout_constraintStart_toStartOf="@+id/otpverification"
-        app:layout_constraintTop_toBottomOf="@+id/otpverification" />
-
+        app:layout_constraintStart_toStartOf="@+id/phonenumber"
+        app:layout_constraintTop_toBottomOf="@+id/phonenumber" />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_margin="20sp"
         android:layout_marginTop="56dp"
-        android:padding="10dp"
+
         app:cardCornerRadius="5dp"
         app:cardMaxElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/otp">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/phonenumber"
-                android:layout_width="match_parent"
-                android:background="@drawable/bg"
-                android:layout_margin="5dp"
-                android:inputType="phone"
-                android:layout_height="50dp"
-                android:hint="Number"
+            <com.mukeshsolanki.OtpView
+                android:id="@+id/otpview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:focusableInTouchMode="true"
+                android:inputType="number"
+
+                android:itemBackground="@drawable/bg"
+                app:OtpItemCount="6"
+                app:OtpItemSpacing="@dimen/cardview_compat_inset_shadow"
+                app:OtpItemRadius="50dp"
+                app:OtpLineColor="#F31A1A"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/con"
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Continue"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="19dp"
+                android:layout_marginRight="20sp"
+                android:text="Verify"
                 app:cornerRadius="5dp"
-                app:layout_constraintEnd_toEndOf="@+id/phonenumber"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="@+id/phonenumber"
-                app:layout_constraintTop_toBottomOf="@+id/phonenumber"
+                app:layout_constraintEnd_toEndOf="@+id/otpview"
+                app:layout_constraintStart_toStartOf="@+id/otpview"
+                app:layout_constraintTop_toBottomOf="@+id/otpview"
                 app:strokeColor="#090101"
-                app:strokeWidth="2dp" />
-
-
+                app:strokeWidth="1dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
