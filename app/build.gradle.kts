@@ -7,6 +7,9 @@ plugins {
 android {
     namespace = "com.app.chatapp"
     compileSdk = 34
+    buildFeatures{
+        viewBinding=true
+    }
 
     defaultConfig {
         applicationId = "com.app.chatapp"
@@ -52,4 +55,5 @@ dependencies {
     implementation ("com.github.pgreze:android-reactions:1.5.1")
     implementation ("com.github.3llomi:CircularStatusView:V1.0.3")
     implementation ("com.github.OMARIHAMZA:StoryView:1.0.2-alpha")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 }
